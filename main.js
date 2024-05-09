@@ -6,15 +6,16 @@ function playSonido (idElementoAudio){
 
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); // Esto nos selecciona todos los elementos con ese nombre de clase
+for (let contador = 0; contador < listaDeTeclas.length; contador++){
 
-var contador = 0;
+  const tecla = listaDeTeclas[contador];
+  const instrumento = tecla.classList[1];
 
-while (contador < 9){
-    const instrumento = listaDeTeclas[contador].classList[1];
-    console.log(instrumento);
-    listaDeTeclas[contador].onclick = function(){
-      playSonido(instrumento);
-    }
-    contador = contador + 1;
-    console.log('vuelta' + contador);
+  const idAudio = `#sonido_${instrumento}`;
+  console.log(idAudio);
+
+  tecla.onclick = function(){
+    playSonido(idAudio);
+
+  }
 }
