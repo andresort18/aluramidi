@@ -18,19 +18,13 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++){
     playSonido(idAudio);
 
   };
-  tecla.onkeydown = function(evento){
-    if (evento.code === 'Space'){
+  tecla.onkeydown = function(evento){// es cuando apachamos la tecla
+    if (evento.code === 'Space' || evento.code === 'Enter' ){ 
       tecla.classList.add('activa');
       console.log(evento.code ==='Space');
-
-    } else if (evento.code === 'Enter'){
-      tecla.classList.add('activa');
-      console.log(evento.code === 'Enter')
-    }
-  
   };
-  tecla.onkeyup = function(){
+  tecla.onkeyup = function(){ // es cuando desapachamos esa tecla
     tecla.classList.remove('activa');
   }
 
-};
+}}
